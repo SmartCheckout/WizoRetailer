@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.wizo.wizoretailer"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    maven {
+        url 'https://maven.google.com'
+    }
+}
+
+
+dependencies {
+        api fileTree(dir: 'libs', include: ['*.jar'])
+        androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+            exclude group: 'com.android.support', module: 'support-annotations'
+        })
+
+        // android support libs
+        implementation 'com.android.support:appcompat-v7:27.1.1'
+        implementation 'com.android.support:support-v13:27.1.1'
+        implementation 'com.android.support:design:27.1.1'
+        implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
+        // Google play services
+        implementation 'com.google.android.gms:play-services-vision:15.0.1'
+        implementation 'com.google.android.gms:play-services-places:15.0.1'
+        implementation 'com.google.android.gms:play-services-location:15.0.1'
+
+        // Google Firebase
+        implementation 'com.google.firebase:firebase-core:16.0.1'
+        implementation 'com.google.firebase:firebase-auth:16.0.1'
+        implementation 'com.firebaseui:firebase-ui-auth:4.1.0'
+        // Firebase ui dependency
+        // Required only if Facebook login support is required
+        // Find the latest Facebook SDK releases here: https://goo.gl/Ce5L94
+        implementation 'com.facebook.android:facebook-login:4.28.0'
+
+        implementation 'com.google.code.gson:gson:2.8.2'
+
+        // third party libs
+        implementation 'com.razorpay:checkout:1.4.0'
+        implementation 'com.github.kenglxn.QRGen:android:2.3.0'
+        implementation 'com.loopj.android:android-async-http:1.4.9'
+        testImplementation 'junit:junit:4.12'
+
+
+
+        // Required only if Twitter login support is required
+        // Find the latest Twitter SDK releases here: https://goo.gl/E5wZvQ
+        //implementation("com.twitter.sdk.android:twitter-core:3.2.0@aar") { transitive = true }
+
+    }
+
+apply plugin: 'com.google.gms.google-services'

@@ -1,0 +1,81 @@
+<android.support.v4.widget.DrawerLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/transactionContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight = "1.0"
+        android:visibility="visible"
+        tools:context="com.wizo.wizoretailer.activity.CartFragment">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/cardview_dark_background"
+            android:id="@+id/storeDetails"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:elevation="4dp"
+            android:shadowRadius="2.0"
+            tools:layout_editor_absoluteX="0dp">
+
+            <ImageView
+                android:id="@+id/locImg"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:paddingLeft="4dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingRight="4dp"
+                android:src="@drawable/ic_map_marker_white_36dp"
+                android:scaleType="centerInside"
+                app:layout_constraintEnd_toStartOf="@+id/storeTitle"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+            <TextView
+                android:id="@+id/storeTitle"
+                android:layout_width="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_height="36dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:text="Whole Foods"
+                 />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <Button
+            android:id="@+id/scanReceipt"
+            android:src="@drawable/ic_barcode_scan_white_48dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="8dp"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:text="@string/scan_receipt"
+            />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v4.widget.DrawerLayout>
