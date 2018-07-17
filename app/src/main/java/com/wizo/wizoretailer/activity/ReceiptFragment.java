@@ -32,7 +32,6 @@ import com.wizo.wizoretailer.model.CartItem;
 import com.wizo.wizoretailer.model.Store;
 import com.wizo.wizoretailer.model.Transaction;
 import com.wizo.wizoretailer.util.CommonUtils;
-import com.wizo.wizoretailer.util.SharedPreferrencesUtil;
 import com.wizo.wizoretailer.util.StateData;
 import com.wizo.wizoretailer.util.TransactionStatus;
 
@@ -46,8 +45,6 @@ import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
 
-import static com.wizo.wizoretailer.constant.constants.SP_TRANSACTION_ID;
-import static com.wizo.wizoretailer.constant.constants.SP_TRANSACTION_STATUS;
 import static com.wizo.wizoretailer.constant.constants.STORESELECTION_ACTIVITY;
 import static com.wizo.wizoretailer.constant.constants.TRANSACTION_SUMMARY_ACTIVITY;
 import static com.wizo.wizoretailer.constant.constants.TRANSACTION_URL;
@@ -191,7 +188,7 @@ public class ReceiptFragment extends WizoFragment {
         // if there is no cached receipt, retrieve from the backend
 
         view.findViewById(R.id.billlayout).setVisibility(View.GONE);
-
+        System.out.println("No cached receipt");
         RequestParams rqstparams = new RequestParams();
         rqstparams.put("trnsId", transactionId);
 

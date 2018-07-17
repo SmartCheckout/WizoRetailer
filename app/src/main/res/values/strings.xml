@@ -63,7 +63,7 @@
     <string name="settings">Settings</string>
     <string name="pay_button">PAY ₹ </string>
     <string name="rupee">₹ </string>
-
+    <string name="gm">gms </string>
     <string-array name="payment_method">
         <item>MasterCard **** 2200</item>
         <item>PaytM ****1180</item>
